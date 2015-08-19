@@ -17,8 +17,11 @@ then
 	exit 255
 fi
 
-LOGDIR=/tmp/log.$$
-mkdir $LOGDIR
+if [ x"$LOGID" = x ]
+then
+  LOGDIR=/tmp/log.$$
+fi
+mkdir -p $LOGDIR
 
 if [ "$1" ] 
 then
